@@ -6,4 +6,5 @@ App Studio Week 1
 
 A Mr. Potatohead app for Android devices. 
 
-Tic-Tac-Toe/Tic-Tac-Toe.png
+
+![alt text](https://github.com/MKRoet/Tic-Tac-Toe/blob/master/Tic-Tac-Toe.png)
