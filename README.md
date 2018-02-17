@@ -1,10 +1,10 @@
-**Potatohead-android-app**
+**TicTacToe android-app**
 
 Maurice Roet
 
-App Studio Week 1
+App Studio Week 2
 
-A Mr. Potatohead app for Android devices. 
+A tic-tac-toe app for Android devices. 
 
 
 ![alt text](https://github.com/MKRoet/Tic-Tac-Toe/blob/master/Tic-Tac-Toe.png)
