@@ -2,6 +2,7 @@ package com.example.gebruiker.tictactoe;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(id);
         TextView textview = findViewById(R.id.textMessage);
 
+        Log.d("row", String.valueOf(row));
+        Log.d("column", String.valueOf(column));
         Tile tile = game.draw(row, column);
+        Log.d("tile", String.valueOf(tile));
 
         switch (tile) {
             case CROSS:
@@ -60,12 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
         game = new Game();
 
-        int id = view.getId();
-        Button button = findViewById(id);
-        button.setText(" ");
-
-        TextView textview = findViewById(R.id.textMessage);
-        textview.setText(" ");
+//        int id = view.getId();
+//        Button button = findViewById(id);
+//        button.setText(" ");
 
     }
 }

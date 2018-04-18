@@ -1,5 +1,7 @@
 package com.example.gebruiker.tictactoe;
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 /**
@@ -15,7 +17,7 @@ public class Game implements Serializable {
     private int movesPlayed;
     private Boolean gameOver;
 
-    // Constructor
+    // Constructor to initialize the game board.
     public Game() {
         board = new Tile[BOARD_SIZE][BOARD_SIZE];
         for(int i=0; i<BOARD_SIZE; i++) {
@@ -27,14 +29,18 @@ public class Game implements Serializable {
         gameOver = false;
     }
 
-    // Method
+    // Method to fill the board when playing.
     public Tile draw(int row, int column) {
 
+        // Retrieve current value of tile.
         Tile selectedTile = board[row][column];
+        Log.d("selected", String.valueOf(selectedTile));
 
+        // Look if space is blank and then fill it with either a cross or a circle.
         if (selectedTile == Tile.BLANK) {
             if (playerOneTurn == true) {
                 selectedTile = Tile.CROSS;   //let op!!
+                Log.d("2", String.valueOf(selectedTile));
                 movesPlayed += 1;
                 playerOneTurn = false;
                 return Tile.CROSS;
@@ -46,6 +52,7 @@ public class Game implements Serializable {
                 return Tile.CIRCLE;
             }
         }
+        // Space isn't blank, invalid move.
         else {
             return Tile.INVALID;
         }
