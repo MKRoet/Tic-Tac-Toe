@@ -32,21 +32,16 @@ public class Game implements Serializable {
     // Method to fill the board when playing.
     public Tile draw(int row, int column) {
 
-        // Retrieve current value of tile.
-        Tile selectedTile = board[row][column];
-        Log.d("selected", String.valueOf(selectedTile));
-
         // Look if space is blank and then fill it with either a cross or a circle.
-        if (selectedTile == Tile.BLANK) {
+        if (board[row][column] == Tile.BLANK) {
             if (playerOneTurn == true) {
-                selectedTile = Tile.CROSS;   //let op!!
-                Log.d("2", String.valueOf(selectedTile));
+                board[row][column] = Tile.CROSS;
                 movesPlayed += 1;
                 playerOneTurn = false;
                 return Tile.CROSS;
             }
             else {
-                selectedTile = Tile.CIRCLE;
+                board[row][column] = Tile.CIRCLE;
                 movesPlayed += 1;
                 playerOneTurn = true;
                 return Tile.CIRCLE;
@@ -77,6 +72,14 @@ public class Game implements Serializable {
         }
         else {
             return GameState.IN_PROGRESS;
+        }
+    }
+    public void resetUI() {
+
+        for(int i=0; i < BOARD_SIZE; i++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
+                board[i][j] = Tile.BLANK;
+            }
         }
     }
 }

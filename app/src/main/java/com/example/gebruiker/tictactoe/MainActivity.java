@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Game game;
     public int row;
     public int column;
+    public int boardSize = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +26,51 @@ public class MainActivity extends AppCompatActivity {
     public void tileClicked(View view) {
 
         int id = view.getId();
+
+        switch(id){
+            case R.id.Tile00:
+                column = 0;
+                row = 0;
+                break;
+            case R.id.Tile01:
+                column = 0;
+                row = 1;
+                break;
+            case R.id.Tile02:
+                column = 0;
+                row = 2;
+                break;
+            case R.id.Tile10:
+                column = 1;
+                row = 0;
+                break;
+            case R.id.Tile11:
+                column = 1;
+                row = 1;
+                break;
+            case R.id.Tile12:
+                column = 1;
+                row = 2;
+                break;
+            case R.id.Tile20:
+                column = 2;
+                row = 0;
+                break;
+            case R.id.Tile21:
+                column = 2;
+                row = 1;
+                break;
+            case R.id.Tile22:
+                column = 2;
+                row = 2;
+                break;
+        }
+
         Button button = findViewById(id);
         TextView textview = findViewById(R.id.textMessage);
 
-        Log.d("row", String.valueOf(row));
-        Log.d("column", String.valueOf(column));
         Tile tile = game.draw(row, column);
-        Log.d("tile", String.valueOf(tile));
+
 
         switch (tile) {
             case CROSS:
@@ -65,8 +104,18 @@ public class MainActivity extends AppCompatActivity {
         game = new Game();
 
 //        int id = view.getId();
-//        Button button = findViewById(id);
-//        button.setText(" ");
+//        Button Button1 = R.id.Tile00;
+//
+//
+//        button.setText("");
+
+
+        TextView textview = findViewById(R.id.textMessage);
+        textview.setText("");
+
+
+
+
 
     }
 }
